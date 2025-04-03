@@ -7,8 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="navbar">
         <h1>📋 Campanhas Diárias</h1>
+        <div class="submenu">
+            <button onclick="showSection('campaigns')">Campanhas</button>
+            <button onclick="showSection('notes')">Anotações</button>
+            <button onclick="showSection('timer')">Cronômetro</button>
+        </div>
+    </div>
+
+    <!-- Seção de Campanhas -->
+    <div id="campaigns" class="section">
         <ul id="campaignList">
             <!-- Lista de campanhas -->
             <li><input type="checkbox" id="campanha1"><label for="campanha1">Itajai 2 Dr José Bonifácio</label></li>
@@ -17,36 +26,27 @@
             <li><input type="checkbox" id="campanha4"><label for="campanha4">Montes Claros MG</label></li>
             <li><input type="checkbox" id="campanha5"><label for="campanha5">São Caetano do Sul</label></li>
             <li><input type="checkbox" id="campanha6"><label for="campanha6">Maringá</label></li>
-            <li><input type="checkbox" id="campanha7"><label for="campanha7">Sorriso - ESTÁ RODANDO CLÍNICO JUNTO</label></li>
+            <li><input type="checkbox" id="campanha7"><label for="campanha7">Sorriso - CLÍNICO JUNTO</label></li>
             <li><input type="checkbox" id="campanha8"><label for="campanha8">Muriaé</label></li>
-            <li><input type="checkbox" id="campanha9"><label for="campanha9">Votuporanga</label></li>
-            <li><input type="checkbox" id="campanha10"><label for="campanha10">Sinop - RODANDO CLÍNICO JUNTO</label></li>
-            <li><input type="checkbox" id="campanha11"><label for="campanha11">Barreiras BA - IMPLANTE JUNTO</label></li>
-            <li><input type="checkbox" id="campanha12"><label for="campanha12">Ourinhos</label></li>
-            <li><input type="checkbox" id="campanha13"><label for="campanha13">Itajai 1</label></li>
-            <li><input type="checkbox" id="campanha14"><label for="campanha14">ITU</label></li>
-            <li><input type="checkbox" id="campanha15"><label for="campanha15">Dois vizinhos</label></li>
-            <li><input type="checkbox" id="campanha16"><label for="campanha16">Hortolândia</label></li>
-            <li><input type="checkbox" id="campanha17"><label for="campanha17">Campo bom RS</label></li>
-            <li><input type="checkbox" id="campanha18"><label for="campanha18">Itaúna - sem gratis</label></li>
-            <li><input type="checkbox" id="campanha19"><label for="campanha19">Itapira SP- IMP E ORTO - sem gratis</label></li>
-            <li><input type="checkbox" id="campanha20"><label for="campanha20">Santa ROSA - sem gratis</label></li>
-            <li><input type="checkbox" id="campanha21"><label for="campanha21">Bagé RS</label></li>
-            <li><input type="checkbox" id="campanha22"><label for="campanha22">Chapecó - Orthodontic</label></li>
-            <li><input type="checkbox" id="campanha23"><label for="campanha23">Jaru</label></li>
-            <li><input type="checkbox" id="campanha24"><label for="campanha24">Jaraguá do Sul</label></li>
-            <li><input type="checkbox" id="campanha25"><label for="campanha25">ODC IBATÉ</label></li>
-            <li><input type="checkbox" id="campanha26"><label for="campanha26">Alegra odonto Colatina</label></li>
-            <li><input type="checkbox" id="campanha27"><label for="campanha27">Coife Quixeramobim CE</label></li>
-            <li><input type="checkbox" id="campanha28"><label for="campanha28">COIFE BACABAL</label></li>
-            <li><input type="checkbox" id="campanha29"><label for="campanha29">ARTE DE SORRIR GOIANIA</label></li>
-            <li><input type="checkbox" id="campanha30"><label for="campanha30">IMPERATRIZ MA</label></li>
-            <li><input type="checkbox" id="campanha31"><label for="campanha31">ORAL SIN IBATÉ IMPLANTE</label></li>
-            <li><input type="checkbox" id="campanha32"><label for="campanha32">PRUDENTÓPOLIS</label></li>
-            <li><input type="checkbox" id="campanha33"><label for="campanha33">DUO PIEDADE</label></li>
         </ul>
         <button id="resetButton">🔄 Limpar Marcações</button>
     </div>
+
+    <!-- Seção de Anotações -->
+    <div id="notes" class="section hidden">
+        <h2>📝 Anotações</h2>
+        <textarea id="notesArea" placeholder="Digite suas anotações aqui..."></textarea>
+        <button id="saveNotes">💾 Salvar</button>
+    </div>
+
+    <!-- Seção de Cronômetro -->
+    <div id="timer" class="section hidden">
+        <h2>⏱️ Cronômetro de 10 Minutos</h2>
+        <div id="countdown">10:00</div>
+        <button onclick="startTimer()">▶️ Iniciar</button>
+        <button onclick="resetTimer()">🔄 Reiniciar</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
